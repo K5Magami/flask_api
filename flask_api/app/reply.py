@@ -18,5 +18,18 @@ def reply():
 
     return jsonify(result)
 
+
+# Web API The Good Partsの内容を再現
+
+@app.route('/v1/users',methods=['GET'])
+def getUsers():
+    users = [{"Id":1 , "Name":"テスト太郎","Hobby":"トレーニング"},{"Id":2 ,"Name":"テスト次郎","Hobby":"読書"}]
+    result = {
+        "Content-Type":"application/json",
+        "ReturnValue":{"Users":users}
+    }
+    return jsonify(result)
+
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000,debug=True)
