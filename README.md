@@ -9,7 +9,7 @@
     
 ## API
 - curlでpost叩く  
-    `curl http://localhost:5000/reply -X POST -H "Content-Type: application/json" -d '{"keyword": "power"}'
+    `curl http://localhost:5000/reply -X POST -H "Content-Type: application/json" -d '{"keyword": "power"}'`
 
 ### The Web API Good Partsの例で組む
 
@@ -24,7 +24,7 @@
 
 - URL構成：http://localhost:5000/v1/users
 - HTTPメソッド：POST
-- curl:``
+- curl:`curl http://localhost:5000/v1/users -X POST -H "Content-Type: application/json" -d '{"name": "popco","hobby":"art"}'`
 
 特定ユーザーの情報取得  
 
@@ -36,7 +36,7 @@
 
 - URL構成：http://localhost:5000/v1/users/:id
 - HTTPメソッド：PUT
-- curl:``
+- curl:
 
 ユーザー情報の削除  
 
