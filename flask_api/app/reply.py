@@ -1,5 +1,6 @@
 from flask import Flask, jsonify, request
 import json
+import sys
 
 app = Flask(__name__)
 app.config['JSON_AS_ASCII']= False
@@ -40,6 +41,8 @@ def signUpUser():
     # パラメータ有無によってresponseにエラーコードを渡す
     name = data["name"]
     hobby = data["hobby"]
+
+    print('this is log',file=sys.stderr)
 
     # 成功時はHTTPステータス200にして、登録したUser情報を返す？？
     user = {"id":str(id), "name":name, "hobby":hobby}
