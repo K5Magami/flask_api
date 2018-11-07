@@ -2,6 +2,7 @@ from flask import Flask, jsonify, request
 import json
 
 app = Flask(__name__)
+app.config['JSON_AS_ASCII']= False
 
 @app.route("/", methods=['GET'])
 def hello():
@@ -34,7 +35,7 @@ def getUsers():
 # ユーザーの新規登録
 @app.route('/v1/users', methods=['POST'])
 def signUpUser():
-    data = json.loads(request.data)
+    data = json.loads(request.data.decode('shift-jis'))
     id = 3  # ロジック的には何かを呼び出して自動採番
     # パラメータ有無によってresponseにエラーコードを渡す
     name = data["name"]

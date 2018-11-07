@@ -10,4 +10,4 @@ WORKDIR $project_dir
 RUN pip install flask
 # RUN pip install -r requirements.txt
 
-CMD ["python", "reply.py"]
+CMD ["python", "-u","reply.py"]
