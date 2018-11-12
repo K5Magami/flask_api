@@ -56,6 +56,26 @@ def signUpUser():
     return jsonify(result)
 
 
+# ユーザー情報の更新
+@app.route('/v1/user/<userId>', methods=['PUT'])
+def updateUserInfo(userId):
+    data = json.loads(request.data.decode('shift-jis'))
+    name = data["name"]
+    hobby = data["hobby"]
+
+    # 実際id用いては更新処理を行う
+    user = {"id":str(userId), "name":name, "hobby":hobby}
+
+    result = {
+        "status":200,
+        "Content-Type":"appplication/json",
+        "result":True,
+        "user":user,
+        "error":""
+    }
+    return jsonify(result)
+
+
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000,debug=True)
