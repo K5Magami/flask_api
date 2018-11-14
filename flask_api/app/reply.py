@@ -57,7 +57,7 @@ def signUpUser():
 
 
 # ユーザー情報の更新
-@app.route('/v1/user/<userId>', methods=['PUT'])
+@app.route('/v1/users/<userId>', methods=['PUT'])
 def updateUserInfo(userId):
     data = json.loads(request.data.decode('shift-jis'))
     name = data["name"]
