@@ -33,6 +33,23 @@ def getUsers():
     }
     return jsonify(result)
 
+# 特定ユーザーの情報取得
+@app.route('/v1/users/<userId>',methods=['GET'])
+def getUser(userId):
+    users = [{'id':1 , "name":"テスト太郎","hobby":"トレーニング"},{'id':2 ,"name":"テスト次郎","hobby":"読書"}]
+
+    def isEven(x):
+        print(x,file=sys.stderr)
+        return x['id'] == userId
+
+    target = list(filter(isEven, users))
+    if len(target) != 0:
+        targetUser = target[0]
+        print(targetUser,file=sys.stderr)
+
+
+    return
+
 # ユーザーの新規登録
 @app.route('/v1/users', methods=['POST'])
 def signUpUser():

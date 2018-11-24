@@ -36,7 +36,7 @@
 
 - URL構成：http://localhost:5000/v1/users/:id
 - HTTPメソッド：PUT
-- curl:  curl http://localhost:5000/v1/users/1 -X PUT -H "Content-Type: application/json" -d '{"name": "popco","hobby":"art"}'
+- curl:  `curl http://localhost:5000/v1/users/1 -X PUT -H "Content-Type: application/json" -d '{"name": "popco","hobby":"art"}'`
 
 ユーザー情報の削除  
 
